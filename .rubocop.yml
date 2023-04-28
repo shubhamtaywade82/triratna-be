@@ -317,3 +317,6 @@ Style/SingleArgumentDig:
 
 Style/StringConcatenation:
   Enabled: true
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
