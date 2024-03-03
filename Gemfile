@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.2.3"
 
 # Use main development branch of Rails
-gem 'rails', '~> 7.1.3'
+gem "rails", "~> 7.1.3"
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
@@ -53,6 +53,7 @@ group :development, :test do
   gem "shoulda-matchers"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri windows]
+  gem "faker"
 end
 
 group :development do

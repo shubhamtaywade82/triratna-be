@@ -30,4 +30,9 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  errors:
+    user:
+      attributes:
+        password:
+          invalid: "must contain at least one uppercase letter, one of the following special characters: %{special_characters}, one number, and be at least 6 characters long"
+
