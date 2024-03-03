@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :users do
+    resource :registration, only: [:create]
+  end
+
   mount Rswag::Ui::Engine => '/api-docs'
   mount Rswag::Api::Engine => '/api-docs'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
