@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def show
-    pp(current_user)
     user_info = {
       name: "#{current_user.first_name} #{current_user.last_name}",
       email: current_user.email
