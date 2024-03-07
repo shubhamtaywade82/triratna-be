@@ -1,8 +1,10 @@
-class Users::SessionsController < ApplicationController
+class SessionsController < ApplicationController
   skip_before_action :authenticate_user, only: [:create]
 
   def create
     @user = User.find_by(email: user_params[:email])
+
+    pp(user_params)
     if @user&.authenticate(user_params[:password])
       token = JsonWebToken.encode(user_id: @user.id)
       time = Time.zone.now + 2.hours.to_i
@@ -20,6 +22,6 @@ class Users::SessionsController < ApplicationController
   private
 
   def user_params
-    params.require(:session).permit(:email, :password)
+    params.require(:user).permit(:email, :password)
   end
 end

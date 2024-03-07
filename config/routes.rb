@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  namespace :users do
-    resource :sessions, only: [:create, :destroy]
-    resource :registration, only: [:create]
-  end
+  get 'users/show'
+
+  post '/register', to: 'registrations#create'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 
   mount Rswag::Ui::Engine => '/api-docs'
   mount Rswag::Api::Engine => '/api-docs'
